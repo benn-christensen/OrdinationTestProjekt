@@ -35,7 +35,7 @@ public class PN {
         // Finder antal dage mellem startdatoen og slutdatoen
         long dageImellemDosis = ChronoUnit.DAYS.between(startDato, slutDato);
         // Udregner døgndosis baseret på antallet af enhededr og antallet af dage mellem doseringer
-        return antalEnheder / dageImellemDosis;
+        return (antalEnheder * antalGangeGivet) / dageImellemDosis;
     }
 
 
