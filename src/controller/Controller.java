@@ -2,18 +2,16 @@ package controller;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
-import ordination.DagligFast;
-import ordination.DagligSkaev;
-import ordination.Laegemiddel;
-import ordination.PN;
-import ordination.Patient;
+import ordination.*;
 import storage.Storage;
 
 public class Controller {
     private Storage storage;
     private static Controller controller;
+    private ArrayList<Ordination> dagligSkaev;
 
     private Controller() {
         storage = new Storage();
@@ -39,7 +37,7 @@ public class Controller {
             throw new IllegalArgumentException("Startdatoen skal være før slutdatoen");
         }
         PN pn = new PN(startDato, slutDato, patient, laegemiddel, antal);
-        patient.addOrdination(pn);
+        patient.setOrdinationer(pn);
         return pn;
     }
 
@@ -53,8 +51,8 @@ public class Controller {
         if (!checkStartFoerSlut(startDato, slutDato)) {
             throw new IllegalArgumentException("Startdatoen skal være før slutdatoen");
         }
-        DaligFast dagligFast = new DagligFast(startDato, slutDato, laegemiddel, doser);
-        patient.addOrdination(dagligFast);
+        DagligFast dagligFast = new DagligFast(startDato, slutDato, laegemiddel, doser);
+        patient.setOrdinationer(dagligFast);
         return dagligFast;
     }
 
@@ -72,7 +70,7 @@ public class Controller {
             throw new IllegalArgumentException("Klokkeslet og antal enheder skal være ens");
         }
         DagligSkaev daligSkaev = new DagligSkaev(startDato, slutDato, patient, laegemiddel, klokkeSlet, antalEnheder);
-        patient.addOrdination(dagligSkaev);
+        patient.setOrdinationer(dagligSkaev);
         return daligSkaev;
     }
 
