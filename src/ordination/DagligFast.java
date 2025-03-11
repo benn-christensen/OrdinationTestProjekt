@@ -31,6 +31,10 @@ public class DagligFast extends Ordination{
         return doegnDosis;
     }
 
+    public Dosis[] getDoser() {
+        return dosisArray;
+    }
+
     @Override
     public String getType() {
         return "Daglig fast";

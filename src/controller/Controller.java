@@ -59,11 +59,16 @@ public class Controller {
 	/**
 	 * Opretter og returnerer en DagligSkæv ordination.
 	 */
-	public DagligSkaev opretDagligSkaevOrdination(LocalDate startDato,
-			LocalDate slutDato, Patient patient, Laegemiddel laegemiddel,
-			LocalTime[] klokkeSlet, double[] antalEnheder) {
-		// TODO
-		return null;
+	public DagligSkaev opretDagligSkaevOrdination(LocalDate startDato, LocalDate slutDato, Patient patient, Laegemiddel laegemiddel,
+												LocalTime[] klokkeSlet, double[] antalEnheder) {
+
+		DagligSkaev dagligSkaev = new DagligSkaev(startDato, slutDato, laegemiddel);
+		patient.addOrdination(dagligSkaev);
+		for (int i = 0; i < klokkeSlet.length; i++) {
+			dagligSkaev.opretDosis(klokkeSlet[i], antalEnheder[i]);
+		}
+
+		return dagligSkaev;
 	}
 
 	/**
@@ -79,14 +84,14 @@ public class Controller {
 	 * anvendes, og den er afhængig af patientens vægt.
 	 */
 	public double anbefaletDosisPrDoegn(Patient patient, Laegemiddel laegemiddel) {
-		//TODO
-		return 0;
+		return laegemiddel.anbefaletDosisPrDoegn(patient.getVaegt());
 	}
 
 	/**
 	 * For et givent vægtinterval og et givent lægemiddel, hentes antallet af
 	 * ordinationer.
 	 */
+	// FIXME: HVAD SKAL MAN?
 	public int antalOrdinationerPrVaegtPrLaegemiddel(double vaegtStart,
 													 double vaegtSlut, Laegemiddel laegemiddel) {
 		// TODO

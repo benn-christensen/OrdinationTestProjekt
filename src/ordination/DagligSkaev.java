@@ -30,6 +30,10 @@ public class DagligSkaev extends Ordination{
         return "Daglig Skæv";
     }
 
+    public ArrayList<Dosis> getDoser() {
+        return dosisArrayList;
+    }
+
     public void opretDosis(LocalTime tid, double antal) {
         dosisArrayList.add(new Dosis(tid, antal));
     }

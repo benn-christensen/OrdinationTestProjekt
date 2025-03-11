@@ -42,7 +42,7 @@ public class Patient {
         }
     }
 
-    public ArrayList<Ordination> getOrdinationArrayList() {
+    public ArrayList<Ordination> getOrdinationer() {
         return ordinationArrayList;
     }
 
