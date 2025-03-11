@@ -35,8 +35,10 @@ public class Controller {
 	 */
 	public PN opretPNOrdination(LocalDate startDato, LocalDate slutDato,
 			Patient patient, Laegemiddel laegemiddel, double antal) {
-		// TODO
-		return null;
+
+		PN newPN = new PN(startDato, slutDato, laegemiddel, antal);
+		patient.addOrdination(newPN);
+		return newPN;
 	}
 
 	/**
@@ -46,8 +48,12 @@ public class Controller {
 			LocalDate slutDato, Patient patient, Laegemiddel laegemiddel,
 			double morgenAntal, double middagAntal, double aftenAntal,
 			double natAntal) {
-		// TODO
-		return null;
+
+		DagligFast dagligFast = new DagligFast(startDato, slutDato, laegemiddel);
+		dagligFast.createDosis(morgenAntal, middagAntal, aftenAntal, natAntal);
+		patient.addOrdination(dagligFast);
+
+		return dagligFast;
 	}
 
 	/**

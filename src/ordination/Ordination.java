@@ -9,11 +9,6 @@ public abstract class Ordination {
 
     private Laegemiddel laegemiddel;
 
-    public Ordination(LocalDate startDato, LocalDate slutDato) {
-        this.startDato = startDato;
-        this.slutDato = slutDato;
-    }
-
     public Ordination(LocalDate startDato, LocalDate slutDato, Laegemiddel laegemiddel) {
         this.startDato = startDato;
         this.slutDato = slutDato;
@@ -33,6 +28,10 @@ public abstract class Ordination {
 
     public LocalDate getSlutDato() {
         return slutDato;
+    }
+
+    public Laegemiddel getLaegemiddel() {
+        return laegemiddel;
     }
 
     /**
