@@ -9,4 +9,7 @@ public class DagligSkaev {
     public void opretDosis(LocalTime tid, double antal) {
         // TODO
     }
+    public Dosis[] getDoser() {
+        return new Dosis[0];
+    }
 }
