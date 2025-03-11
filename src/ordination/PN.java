@@ -43,6 +43,6 @@ public class PN {
     }
 
     public Laegemiddel getLaegemiddel() {
-        return laege
+        return null;
     }
 }
