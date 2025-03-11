@@ -2,9 +2,14 @@ package ordination;
 
 import java.time.LocalDate;
 
-public class PN {
-
+public class PN extends Ordination{
+    private int antalGivninger = 0;
     private double antalEnheder;
+
+    public PN(LocalDate startDato, LocalDate slutDato, Laegemiddel laegemiddel, double antalEnheder) {
+        super(startDato, slutDato, laegemiddel);
+        this.antalEnheder = antalEnheder;
+    }
 
     /**
      * Registrerer at der er givet en dosis paa dagen givetDato
@@ -14,19 +19,27 @@ public class PN {
      * @return
      */
     public boolean givDosis(LocalDate givetDato) {
-        // TODO
-        return false;   
+        if(givetDato.isBefore(getStartDato().minusDays(1)) && givetDato.isBefore(getSlutDato().plusDays(1))){
+           antalGivninger++;
+           return true;
+        }else{
+            System.out.println("givetDato er ikke indenfor start og slut datoer.");
+            return false;
+        }
     }
 
     public double doegnDosis() {
-        // TODO
-        return 0.0;
+        return (antalGivninger * antalEnheder) / (antalDage());
+    }
+
+    @Override
+    public String getType() {
+        return "PN";
     }
 
 
     public double samletDosis() {
-        // TODO
-        return 0.0;
+        return antalGivninger * antalEnheder;
     }
 
     /**
@@ -34,12 +47,10 @@ public class PN {
      * @return
      */
     public int getAntalGangeGivet() {
-        // TODO
-        return-1;
+        return antalGivninger;
     }
 
     public double getAntalEnheder() {
         return antalEnheder;
     }
-
 }

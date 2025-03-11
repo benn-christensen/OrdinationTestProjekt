@@ -24,9 +24,10 @@ public class Laegemiddel {
         return navn;
     }
 
-    public double anbefaletDosisPrDoegn(int vaegt) {
-        //TODO
-        return 0;
+    public double anbefaletDosisPrDoegn(double vaegt) {
+        if (vaegt < 25) return enhedPrKgPrDoegnLet;
+        else if (vaegt > 120) return enhedPrKgPrDoegnTung;
+        else return enhedPrKgPrDoegnNormal;
     }
 
     @Override

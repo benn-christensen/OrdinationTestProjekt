@@ -7,6 +7,18 @@ public abstract class Ordination {
     private LocalDate startDato;
     private LocalDate slutDato;
 
+    private Laegemiddel laegemiddel;
+
+    public Ordination(LocalDate startDato, LocalDate slutDato, Laegemiddel laegemiddel) {
+        this.startDato = startDato;
+        this.slutDato = slutDato;
+        this.laegemiddel = laegemiddel;
+    }
+
+    public void setLaegemiddel(Laegemiddel laegemiddel) {
+        this.laegemiddel = laegemiddel;
+    }
+
     // TODO Link til Laegemiddel
     // TODO constructor
 
@@ -16,6 +28,10 @@ public abstract class Ordination {
 
     public LocalDate getSlutDato() {
         return slutDato;
+    }
+
+    public Laegemiddel getLaegemiddel() {
+        return laegemiddel;
     }
 
     /**
