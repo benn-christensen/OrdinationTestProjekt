@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class PN {
 
     private double antalEnheder;
+    private Laegemiddel laegemiddel;
 
     /**
      * Registrerer at der er givet en dosis paa dagen givetDato
@@ -40,6 +41,10 @@ public class PN {
 
     public double getAntalEnheder() {
         return antalEnheder;
+    }
+
+    public Laegemiddel getLaegemiddel() {
+        return laegemiddel;
     }
 
 }
