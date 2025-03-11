@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class DagligFast extends Ordination {
     private Dosis[] doser;
 
-    public DagligFast(LocalDate startDato, LocalDate slutdato, Lægemiddel laegemiddel, Dosis[] doser) {
+    public DagligFast(LocalDate startDato, LocalDate slutdato, Laegemiddel laegemiddel, Dosis[] doser) {
         super(startDato, slutdato, laegemiddel);
         this.doser = doser;
     }
