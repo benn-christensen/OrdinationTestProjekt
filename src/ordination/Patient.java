@@ -26,11 +26,11 @@ public class Patient {
         this.navn = navn;
     }
 
-    public double getVaegt(){
+    public double getVaegt() {
         return vaegt;
     }
 
-    public void setVaegt(double vaegt){
+    public void setVaegt(double vaegt) {
         this.vaegt = vaegt;
     }
 
@@ -38,9 +38,12 @@ public class Patient {
         this.ordinationer = ordinationer;
     }
 
+    public ArrayList<Ordination> getOrdinationer() {
+        return ordinationer;
+    }
 
     @Override
-    public String toString(){
+    public String toString() {
         return navn + "  " + cprnr;
     }
 

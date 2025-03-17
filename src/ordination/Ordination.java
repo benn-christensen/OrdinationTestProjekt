@@ -57,4 +57,5 @@ public abstract class Ordination {
     public Laegemiddel getLaegemiddel() {
         return laegemiddel;
     }
+
 }
