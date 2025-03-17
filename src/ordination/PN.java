@@ -51,7 +51,6 @@ public class PN {
         long dageImellemDosis = ChronoUnit.DAYS.between(startDato, slutDato);
         return antalEnheder * dageImellemDosis;
     }
-
     /**
      * Returnerer antal gange ordinationen er anvendt
      *
