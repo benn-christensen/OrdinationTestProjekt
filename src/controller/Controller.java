@@ -101,7 +101,6 @@ public class Controller {
      */
     public int antalOrdinationerPrVaegtPrLaegemiddel(double vaegtStart, double vaegtSlut, Laegemiddel laegemiddel) {
         int antalOrdinationer = 0;
-
         List<Patient> patienter = getAllPatienter();
 
         for (Patient patient : patienter) {
