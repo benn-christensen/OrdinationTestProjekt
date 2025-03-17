@@ -108,13 +108,11 @@ public class Controller {
 
             if (patientVaegt >= vaegtStart && patientVaegt <= vaegtSlut) {
                 List<Ordination> ordinationer = patient.getOrdinationer();
-
                 for (Ordination ordination : ordinationer) {
                     if (ordination.getLaegemiddel().equals(laegemiddel)) {
                         antalOrdinationer++;
                     }
                 }
-
             }
         }
         return antalOrdinationer;
