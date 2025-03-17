@@ -4,11 +4,20 @@ import java.time.LocalDate;
 
 public class DagligFast extends Ordination {
     private Dosis[] doser;
+    private double morgenAntal;
+    private double middagAntal;
+    private double aftenAntal;
+    private double natAntal;
 
-    public DagligFast(LocalDate startDato, LocalDate slutdato, Laegemiddel laegemiddel, Dosis[] doser) {
-        super(startDato, slutdato, laegemiddel);
-        this.doser = doser;
+    public DagligFast(LocalDate startDato, LocalDate slutDato, Laegemiddel laegemiddel, double morgenAntal, double middagAntal, double aftenAntal, double natAntal){
+        super(startDato,slutDato,laegemiddel);
+        this.morgenAntal = morgenAntal;
+        this.middagAntal = middagAntal;
+        this.aftenAntal = aftenAntal;
+        this.natAntal = natAntal;
+
     }
+
 
     public Dosis[] getDoser() {
         return doser;

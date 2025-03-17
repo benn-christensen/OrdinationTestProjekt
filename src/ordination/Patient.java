@@ -34,7 +34,6 @@ public class Patient {
         this.vaegt = vaegt;
     }
 
-    //TODO: Metoder til at vedligeholde link til Ordination
     public void setOrdinationer(ArrayList<Ordination> ordinationer) {
         this.ordinationer = ordinationer;
     }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DagligSkaev {
-    // TODO  DagligSkæv har aggregering til Dosis
     private List<Dosis>doser = new ArrayList<>();
     //DagligSkæv har composition til Ordination
     private Ordination ordination;
@@ -19,7 +18,6 @@ public class DagligSkaev {
     }
 
     public void opretDosis(LocalTime tid, double antal) {
-        // TODO
         doser.add(new Dosis(tid, antal));
     }
     public Dosis[] getDoser() {

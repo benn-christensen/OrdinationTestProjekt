@@ -14,6 +14,7 @@ public abstract class Ordination {
         this.laegemiddel = laegemiddel;
     }
 
+
     public LocalDate getStartDato() {
         return startDato;
     }	

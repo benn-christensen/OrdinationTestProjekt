@@ -1,6 +1,7 @@
 package ordination;
 
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class PN {
@@ -12,6 +13,12 @@ public class PN {
     private Laegemiddel laegemiddel;
     private int antalGangeGivet = 0;
 
+    public PN(LocalDate startDato, LocalDate slutDato, double antalEnheder, Laegemiddel laegemiddel) {
+        this.startDato = startDato;
+        this.slutDato = slutDato;
+        this.antalEnheder = antalEnheder;
+        this.laegemiddel = laegemiddel;
+    }
 
     /**
      * Registrerer at der er givet en dosis paa dagen givetDato
@@ -62,4 +69,11 @@ public class PN {
         return laegemiddel;
     }
 
+    public LocalDate getStartDato() {
+        return startDato;
+    }
+
+    public LocalDate getSlutDato() {
+        return slutDato;
+    }
 }
